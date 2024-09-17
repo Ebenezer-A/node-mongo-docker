@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      - mongo
+    volumes:
+      - C:\Users\hp\dev\node-mongo-docker:/code
+      - /code/node_modules
+  
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
